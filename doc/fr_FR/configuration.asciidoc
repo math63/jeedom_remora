@@ -1,0 +1,3 @@
+==== Configuration du plugin
+
+Il faut configurer le Device ID et l'access token au cloud Spark pour que les équipements se créer automatiquement
