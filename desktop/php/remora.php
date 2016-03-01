@@ -51,7 +51,7 @@ $eqLogics = eqLogic::byType('remora');
         echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
         echo "<center>";
         $test = 'node_' . $eqLogic->getConfiguration('icone') . '.png';
-        log::add('playbulb', 'debug', 'test ' . $test);
+        log::add('remora', 'debug', 'test ' . $test);
         if (in_array($test, $files)) {
           $path = 'node_' . $eqLogic->getConfiguration('icone');
         } else {
