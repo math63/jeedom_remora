@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<info>
-    <id>remora</id>
-    <name>Remora</name>
-    <licence>AGPL</licence>
-    <author>lunarok</author>
-    <require>2.1</require>
-    <category>wellness</category>
-</info>
