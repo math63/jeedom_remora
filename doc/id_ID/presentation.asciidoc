@@ -1,0 +1,5 @@
+==== Remora, interconnexion avec le fil pilote et la téléinfo
+
+Ce plugin permet d'envoyer les commandes fil pilote à vitre Remora.
+
+Il permet également de récupérer les informations de téléinfo.
