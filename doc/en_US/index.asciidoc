@@ -7,7 +7,7 @@ include::configuration.asciidoc[]
 
 '''
 == FAQ
-include::faq.asciidoc[]
+include::FAQ.AsciiDoc]
 
 '''
 == Troubleshoting

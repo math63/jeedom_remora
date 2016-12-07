@@ -1,6 +1,6 @@
 {
     "plugins\/remora\/plugin_info\/configuration.php": {
-        "Type de Remora : ": "Type de Remora : ",
+        "Type de Remora : ": "Type of Remora : ",
         "Nodemcu": "Nodemcu",
         "Spark": "Spark",
         "IP du Remora : ": "IP du Remora : ",
