@@ -2,8 +2,8 @@
 
 Chartre graphique
 
-Ajout de l'ESP
+Add the ESP
 
 ==== Version 1
 
-Création du plugin
+Creation of the plugin
