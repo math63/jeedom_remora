@@ -1,3 +1,3 @@
 ==== The plugin configuration
 
-Il faut configurer le Device ID et l'access token au cloud Spark pour que les équipements se créer automatiquement
+You must configure the Device ID and access token to the Spark cloud so that the devices can be automatically created
