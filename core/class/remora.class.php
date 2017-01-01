@@ -77,7 +77,11 @@ class remora extends eqLogic {
           $cmdlogic->setEqType('remora');
           $cmdlogic->setLogicalId($key);
           $cmdlogic->setType('info');
-          $cmdlogic->setSubType('numeric');
+          if ($remora->id == 'PTEC' || $remora->id == 'OPTARIF') {
+            $cmdlogic->setSubType('string');
+          } else {
+            $cmdlogic->setSubType('numeric');
+          }
         }
         $cmdlogic->setConfiguration('value', $value);
         $cmdlogic->save();
