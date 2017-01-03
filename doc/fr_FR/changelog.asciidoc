@@ -1,6 +1,6 @@
 ==== Version 1.1
 
-Chartre graphique
+Charte graphique
 
 Ajout de l'ESP
 
