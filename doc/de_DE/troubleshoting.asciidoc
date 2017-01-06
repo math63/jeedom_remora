@@ -1,5 +1,5 @@
 [panel,danger]
-.Je n'ai pas d'informations qui remontent
+.Ich bekomme keine Informationen, die zurückreichen
 --
 Il faut bien créer saisir l'adresse et la clef Spark, puis sauvegarder
 --
