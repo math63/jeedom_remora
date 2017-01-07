@@ -9,7 +9,7 @@
     },
     "plugins\/remora\/desktop\/php\/remora.php": {
         "Ajouter un équipement": "Gerät hinzufügen",
-        "Rechercher": "Rechercher",
+        "Rechercher": "Suchen",
         "Gestion": "Verwaltung",
         "Configuration": "Konfiguration",
         "Mes remora": "Mein Remora",
@@ -23,21 +23,21 @@
         "Objet parent": "Elternobjekt",
         "Aucun": "Keine",
         "Catégorie": "Kategorie",
-        "Activer": "Activer",
-        "Visible": "Visible",
-        "Commentaire": "Commentaire",
-        "Nom": "Nom",
-        "Valeur": "Valeur",
-        "Paramètres": "Paramètres"
+        "Activer": "Aktivieren",
+        "Visible": "Sichtbar",
+        "Commentaire": "Kommentar",
+        "Nom": "Name",
+        "Valeur": "Wert",
+        "Paramètres": "Parameter"
     },
     "plugins\/remora\/desktop\/js\/remora.js": {
-        "Nom de l\\'info": "Nom de l\\'info",
-        "Valeur": "Valeur",
-        "Unité": "Unité",
-        "Historiser": "Historiser",
-        "Afficher": "Afficher",
-        "Tester": "Tester",
-        "Inverser": "Inverser",
-        "Afficher le Nom": "Afficher le Nom"
+        "Nom de l\\'info": "Info Name",
+        "Valeur": "Wert",
+        "Unité": "Einheit",
+        "Historiser": "Archivieren",
+        "Afficher": "Anzeigen",
+        "Tester": "Testen",
+        "Inverser": "Invertieren",
+        "Afficher le Nom": "Name anzeigen"
     }
 }
