@@ -36,7 +36,7 @@ class remora extends eqLogic {
     if ($elogic->getIsEnable() == 1) {
       $elogic->getCEStatus();
     }
-    self::getStatus();
+    self::getStatusAll();
   }
 
   public function getTeleinfo() {
@@ -124,8 +124,8 @@ class remora extends eqLogic {
     return ;
   }
 
-  public function getStatus() {
-    log::add('remora', 'debug', 'getStatus ');
+  public function getStatusAll() {
+    log::add('remora', 'debug', 'getStatusAll ');
     if (config::byKey('type', 'remora', 0) == "esp") {
       $addr = config::byKey('addr', 'remora', 0);
       $devAddr = 'http://' . $addr . '/fp';
