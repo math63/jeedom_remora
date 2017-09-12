@@ -46,7 +46,8 @@ class remora extends eqLogic {
     if (config::byKey('type', 'remora', 0) == "esp") {
       $addr = config::byKey('addr', 'remora', 0);
       $devAddr = 'http://' . $addr . '/tinfo';
-      $devResult = file($devAddr);
+      $devRequest = new com_http($devAddr);
+      $devResult = $devRequest->exec();
       $ticall =implode($devResult);
     } else {
       $accessToken = config::byKey('token', 'remora', 0);
@@ -97,7 +98,8 @@ class remora extends eqLogic {
     if (config::byKey('type', 'remora', 0) == "esp") {
       $addr = config::byKey('addr', 'remora', 0);
       $devAddr = 'http://' . $addr . '/relais';
-      $devResult = file_get_contents($devAddr);
+      $devRequest = new com_http($devAddr);
+      $devResult = $devRequest->exec();
       $jsonob = json_decode($devResult);
       $result = $jsonob->{'relais'};
     } else {
@@ -129,7 +131,8 @@ class remora extends eqLogic {
     if (config::byKey('type', 'remora', 0) == "esp") {
       $addr = config::byKey('addr', 'remora', 0);
       $devAddr = 'http://' . $addr . '/fp';
-      $devResult = file_get_contents($devAddr);
+      $devRequest = new com_http($devAddr);
+      $devResult = $devRequest->exec();
       $result = json_decode($devResult);
     } else {
       $accessToken = config::byKey('token', 'remora', 0);
@@ -170,7 +173,8 @@ class remora extends eqLogic {
 
       if (config::byKey('type', 'remora', 0) == "esp") {
         $devAddr = 'http://' . $addr . '/delestage';
-        $devResult = file($devAddr);
+        $devRequest = new com_http($devAddr);
+        $devResult = $devRequest->exec();
         $retour = $devResult[0];
         $json = json_decode($retour);
         $result = $json['niveau'];
@@ -201,9 +205,8 @@ class remora extends eqLogic {
     if (config::byKey('type', 'remora', 0) == "esp") {
       $addr = config::byKey('addr', 'remora', 0);
       $devAddr = 'http://' . $addr . '?setfp=' . $params;
-      $devResult = file($devAddr);
-      //$retour = $devResult[0];
-      //$result = json_decode($retour);
+      $devRequest = new com_http($devAddr);
+      $devResult = $devRequest->exec();
     } else {
       $accessToken = config::byKey('token', 'remora', 0);
       $deviceid = config::byKey('deviceid', 'remora', 0);
@@ -233,9 +236,8 @@ class remora extends eqLogic {
     if (config::byKey('type', 'remora', 0) == "esp") {
       $addr = config::byKey('addr', 'remora', 0);
       $devAddr = 'http://' . $addr . '?relais=' . $request;
-      $devResult = file($devAddr);
-      //$retour = $devResult[0];
-      //$result = json_decode($retour);
+      $devRequest = new com_http($devAddr);
+      $devResult = $devRequest->exec();
     } else {
       $accessToken = config::byKey('token', 'remora', 0);
       $deviceid = config::byKey('deviceid', 'remora', 0);
