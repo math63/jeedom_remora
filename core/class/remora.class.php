@@ -48,7 +48,7 @@ class remora extends eqLogic {
       $devAddr = 'http://' . $addr . '/tinfo';
       $devRequest = new com_http($devAddr);
       $devResult = $devRequest->exec();
-      $ticall =implode($devResult);
+      $ticall = $devResult;
     } else {
       $accessToken = config::byKey('token', 'remora', 0);
       $deviceid = config::byKey('deviceid', 'remora', 0);
@@ -66,7 +66,7 @@ class remora extends eqLogic {
     }
 
       $tinfo = json_decode($ticall);
-      //log::add('remora', 'debug', 'Retour ' . print_r($tinfo,true));
+      log::add('remora', 'debug', 'Retour Teleinfo ' . print_r($tinfo,true));
       foreach($tinfo as $key => $value ) {
         log::add('remora', 'debug', 'Retour Teleinfo ' . $key . ' valeur ' . $value);
         $remora = self::byLogicalId('teleinfo', 'remora');
