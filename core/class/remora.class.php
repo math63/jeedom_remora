@@ -85,6 +85,7 @@ class remora extends eqLogic {
           }
         }
         $cmdlogic->setConfiguration('value', $value);
+        $value = str_replace('.', '', $value);
         $cmdlogic->save();
         $cmdlogic->event($value);
       }
