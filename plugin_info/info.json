@@ -1,10 +1,13 @@
 {
 	"id" : "remora",
 	"name" : "Remora",
+	"description" : "Remora est une carte permettant de gérer les fils pilotes. Avec ce plugin vous pouvez donc la controler directement depuis Jeedom",
 	"licence" : "AGPL",
 	"author" : "lunarok",
 	"require" : "3.0",
 	"category" : "wellness",
+	"language" : ["fr_FR","en_US"],
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
     "changelog" : "https://lunarok.github.io/jeedom_docs/plugins/remora/changelog.html",
     "documentation" : "https://lunarok.github.io/jeedom_docs/plugins/remora/"
 }
