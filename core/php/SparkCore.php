@@ -4,6 +4,7 @@ use Guzzle\Http\Client;
 
 /**
  * Class SparkCore
+ * "spark" corresponds to the old name of particle cloud
  * @package Wensleydale
  */
 class SparkCore
@@ -15,7 +16,7 @@ class SparkCore
      */
     public static function make($accessToken)
     {
-        $client = new Client('https://api.spark.io/{version}', array(
+        $client = new Client('https://api.particle.io/{version}', array(
             'version' => 'v1',
             'request.options' => array(
                 'headers' => array('Authorization' => 'Bearer ' . $accessToken)
@@ -27,7 +28,7 @@ class SparkCore
 
     public static function token()
     {
-        $client = new Client('https://api.spark.io');
+        $client = new Client('https://api.particle.io');
 
         return new SparkToken($client);
     }
