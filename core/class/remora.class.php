@@ -40,7 +40,7 @@ class remora extends eqLogic {
   }
 
   public function getTeleinfo() {
-    //https://api.spark.io/v1/devices/[DEVICE_ID]/indexhp?access_token=[ACCESS_TOKEN]
+    //https://api.particle.io/v1/devices/[DEVICE_ID]/indexhp?access_token=[ACCESS_TOKEN]
     $elogic = self::byLogicalId('teleinfo', 'remora');
     log::add('remora', 'debug', 'getTeleinfo ');
     if (config::byKey('type', 'remora', 0) == "esp") {
@@ -94,7 +94,7 @@ class remora extends eqLogic {
   }
 
   public function getCEStatus() {
-    //https://api.spark.io/v1/devices/[DEVICE_ID]/indexhp?access_token=[ACCESS_TOKEN]
+    //https://api.particle.io/v1/devices/[DEVICE_ID]/indexhp?access_token=[ACCESS_TOKEN]
 
     if (config::byKey('type', 'remora', 0) == "esp") {
       $addr = config::byKey('addr', 'remora', 0);
@@ -200,7 +200,7 @@ class remora extends eqLogic {
 
   public function remoraCall($zone,$request) {
     log::add('remora', 'debug', 'Recu commande ' . $request . ' vers ' . $zone);
-    //curl https://api.spark.io/v1/devices/[DEVICE_ID]/fp -d access_token=[ACCESS_TOKEN] -d params=[ORDRES]
+    //curl https://api.particle.io/v1/devices/[DEVICE_ID]/fp -d access_token=[ACCESS_TOKEN] -d params=[ORDRES]
     $params = $zone.$request;
 
     if (config::byKey('type', 'remora', 0) == "esp") {
