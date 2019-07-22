@@ -4,7 +4,7 @@
 	"description" : "Remora est une carte permettant de gérer les fils pilotes. Avec ce plugin vous pouvez donc la controler directement depuis Jeedom",
 	"licence" : "AGPL",
 	"author" : "lunarok",
-	"require" : "3.0",
+	"require" : "3.3.24",
 	"category" : "wellness",
 	"language" : ["fr_FR","en_US"],
 	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
