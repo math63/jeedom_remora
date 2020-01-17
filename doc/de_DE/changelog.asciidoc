@@ -1,9 +1,0 @@
-==== Version 1.1
-
-Graphische Darstellung
-
-ESP hinzugefügt
-
-==== Version 1
-
-Erstellung des Plugins

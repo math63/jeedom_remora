@@ -1,5 +1,0 @@
-[panel,danger]
-. I don't have any information going back
---
-Il faut bien créer saisir l'adresse et la clef Spark, puis sauvegarder
---

@@ -1,3 +1,0 @@
-==== The plugin configuration
-
-You must configure the Device ID and access token to the Spark cloud so that the devices can be automatically created

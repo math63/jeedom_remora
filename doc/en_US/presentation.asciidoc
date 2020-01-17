@@ -1,5 +1,0 @@
-==== Remora, interconnection with the pilot wire and the teleinfo
-
-This plugin makes it possible to send the commands wire pilot to glass Remora.
-
-It also lets you retrieve information from teleinfo.

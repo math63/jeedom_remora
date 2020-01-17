@@ -1,9 +1,0 @@
-==== Version 1.1
-
-Charte graphique
-
-Ajout de l'ESP
-
-==== Version 1
-
-Création du plugin

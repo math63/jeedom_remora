@@ -1,5 +1,0 @@
-[panel,primary]
-.Stützt sich das Plugin auf APIs Dritter ?
---
-Oui, le plugin pilote Remora via l'API Spark
---
