@@ -38,6 +38,63 @@ class remora extends eqLogic {
     }
     self::getStatusAll();
   }
+  
+    public static function cron5() {
+    $elogic = self::byLogicalId('sensor', 'remora');
+    if ($elogic->getIsEnable() == 1) {
+      $elogic->getSensor();
+    }
+  }
+  
+  public function getSensor() {
+	     //https://api.particle.io/v1/devices/[DEVICE_ID]/indexhp?access_token=[ACCESS_TOKEN]
+    $elogic = self::byLogicalId('sensor', 'remora');
+    log::add('remora', 'debug', 'getSensor ');
+    if (config::byKey('type', 'remora', 0) == "esp") {
+      $addr = config::byKey('addr', 'remora', 0);
+      $devAddr = 'http://' . $addr . '/sensor';
+      $devRequest = new com_http($devAddr);
+      $devResult = $devRequest->exec();
+      $ticall = $devResult;
+    } else {
+      $accessToken = config::byKey('token', 'remora', 0);
+      $deviceid = config::byKey('deviceid', 'remora', 0);
+      $spark = new phpSpark();
+      $spark->setDebug(false);
+      $spark->setDebugType("TXT");
+      $spark->setAccessToken($accessToken);
+      if($spark->getVariable($deviceid, "sensor") == true) {
+        $obj = $spark->getResult();
+        $ticall = $obj['result'];
+      } else {
+        log::add('remora', 'error', 'Sensor Erreur d\'appel ' . $spark->getError()) . ' source ' . $spark->getErrorSource();
+        return false;
+      }
+    }
+
+      $sensor = json_decode($ticall);
+      log::add('remora', 'debug', 'Retour Sensor ' . print_r($sensor,true));
+      foreach($sensor as $key => $value ) {
+        log::add('remora', 'debug', 'Retour Sensor ' . $key . ' valeur ' . $value);
+        $remora = self::byLogicalId('sensor', 'remora');
+        $cmdlogic = remoraCmd::byEqLogicIdAndLogicalId($remora->getId(),$key);
+        if (!is_object($cmdlogic)) {
+          $cmdlogic = new remoraCmd();
+          $cmdlogic->setName($key);
+          $cmdlogic->setEqLogic_id($remora->id);
+          $cmdlogic->setEqType('remora');
+          $cmdlogic->setLogicalId($key);
+          $cmdlogic->setType('info');
+          $cmdlogic->setSubType('numeric');
+
+        }
+        $cmdlogic->setConfiguration('value', $value);
+        $cmdlogic->save();
+        $cmdlogic->event($value);
+      }
+
+    return ;
+  }	
 
   public function getTeleinfo() {
     //https://api.particle.io/v1/devices/[DEVICE_ID]/indexhp?access_token=[ACCESS_TOKEN]
@@ -434,6 +491,18 @@ class remora extends eqLogic {
       $remora->setEqType_name('remora');
       $remora->setLogicalId($logical);
       $remora->setName('Téléinfo');
+      $remora->setIsEnable(true);
+      $remora->save();
+    }
+	
+	$logical = 'sensor';
+    $remora = self::byLogicalId($logical, 'remora');
+    if (!is_object($remora)) {
+      log::add('remora', 'info', 'Equipement n existe pas, création ' . $logical);
+      $remora = new remora();
+      $remora->setEqType_name('remora');
+      $remora->setLogicalId($logical);
+      $remora->setName('Sensor');
       $remora->setIsEnable(true);
       $remora->save();
     }
